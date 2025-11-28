@@ -1,4 +1,6 @@
+// environment.ts (dev)
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/api/tutorials'  // local backend URL
+  apiUrl: 'http://localhost:8080/api/tutorials'
 };
+
