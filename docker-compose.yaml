@@ -1,5 +1,15 @@
 version: '3.9'
+
 services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
   backend:
     build: ./backend
     ports:
@@ -9,12 +19,6 @@ services:
     depends_on:
       - mongo
 
-  mongo:
-    image: mongo:6.0
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-
 volumes:
   mongo_data:
+
