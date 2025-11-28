@@ -1,3 +1,4 @@
+require('dotenv').config(); // Load .env file
 const express = require("express");
 //const cors = require("cors");
 
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
 db.mongoose
-  .connect(db.url, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
